@@ -21,7 +21,7 @@ void seedThreads() {
 
 double sqr(const double x) { return x * x; }
 
-double pi_calc()
+double parallel_pi_calc()
 {
     unsigned int sum = 0;
     unsigned int seed, tid, i;
@@ -46,16 +46,40 @@ double pi_calc()
     return ((double)sum) / N / nThreads * 4;
 }
 
+double sync_pi_calc()
+{
+    unsigned int sum = 0;
+    unsigned int seed, i;
+    seed = time(0);
+    srand(seed);
+
+    for (i = 0; i < N * nThreads; ++i)
+    {
+        double r = sqr(((double) rand_r(&seed)) / RAND_MAX) +
+        sqr(((double) rand_r(&seed)) / RAND_MAX);
+        sum += r <= 1;
+    }
+
+    return ((double)sum) / N / nThreads * 4;
+}
+
 int main (int argc, char *argv[])
 {
+    omp_set_num_threads(1);
+    double start_sync = omp_get_wtime();
+    printf("Sync Pi = %lf\n", sync_pi_calc(N));
+    double finish_sync = omp_get_wtime();
+    printf("Sync Time = %lf\n", finish_sync - start_sync);
+
+
     omp_set_num_threads(nThreads);
     seedThreads();
 
     omp_set_num_threads(nThreads);
-    double start = omp_get_wtime();
-    printf("Pi = %lf\n", pi_calc(N));
-    double end = omp_get_wtime();
-    printf("Time = %lf\n", end - start);
+    double start_parallel = omp_get_wtime();
+    printf("Parallel Pi = %lf\n", parallel_pi_calc(N));
+    double finish_parallel = omp_get_wtime();
+    printf("Parallel Time = %lf\n", finish_parallel - start_parallel);
 
     return 0;
 }
