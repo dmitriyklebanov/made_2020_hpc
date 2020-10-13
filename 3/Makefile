@@ -21,7 +21,8 @@ TARGETS_SOURCES := $(SRCDIR)/omp_hello.c \
 	$(SRCDIR)/omp_sumarray.c \
 	$(SRCDIR)/omp_fixedreduction.c \
 	$(SRCDIR)/omp_fixedparfoc.c \
-	$(SRCDIR)/omp_pi_calc.c
+	$(SRCDIR)/omp_pi_calc.c \
+	$(SRCDIR)/Axisb.c
 
 #Flags, Libraries and Includes
 OPTIMIZE    := -g -O3

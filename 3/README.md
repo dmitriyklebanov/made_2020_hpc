@@ -28,13 +28,15 @@
 
 3. Implement a parallel program that uses the Monte Carlo method to estimate Pi number. Randomly (be careful with the random number generator! An example in the lecture) you throw a point into a unit square. A circle is inscribed in the same square. If the point is in the circle, increase the counter. Then find the ratio of the points in the circle to the total number of points. Knowing the areas of the square and the circle, find approximately Pi. (20 points)
 
+4. Numerically solve system of linear equations using [Gauss-Seidel method](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%93%D0%B0%D1%83%D1%81%D1%81%D0%B0_%E2%80%94_%D0%97%D0%B5%D0%B9%D0%B4%D0%B5%D0%BB%D1%8F_%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9): ``` AX = b```. Solution should be in the Axisb.c file.
+
 Note: clock() measures the sum of wall clocks across all threads. Use omp_get_wtime() instead (it returns value in seconds).
 
 ## Solution
 
-Fixed files: [omp_fixedreduction.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/omp_fixedreduction.c) and [omp_fixedparfoc.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/omp_fixedparfoc.c).
-
-Pi calculation: [omp_pi_calc.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/omp_pi_calc.c).
+* Fixed files: [omp_fixedreduction.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/omp_fixedreduction.c) and [omp_fixedparfoc.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/omp_fixedparfoc.c).
+* Pi calculation: [omp_pi_calc.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/omp_pi_calc.c).
+* Gauss-Seidel method: [Axisb.c](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3/src/Axisb.c).
 
 ### Usage
 
