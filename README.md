@@ -8,3 +8,4 @@ Homework for "High Performance Computing" course in Big Data Academy [MADE](http
 - [02: Terminal, environment variables, linking, Makefile, virtual environments](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/2)
 - [03: Pthreads, openmp](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/3)
 - [05: MPI usage](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/5)
+- [06: CUDA](https://github.com/dmitriyklebanov/made_2020_hpc/tree/master/6)
